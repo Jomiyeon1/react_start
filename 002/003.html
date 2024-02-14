@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+</head>
+
+<div id="root"></div>
+
+<body>
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"
+        integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/babel">
+        // 일정 규모가 되지 않는 간단한 싱글 페이지나 다수의 정적 페이지는 React를 도입하는 것이 좋지 않을 수 있다.
+        function Header() {
+            return (
+                <div>header
+                    <div>menu</div>
+                </div>
+            )
+        }
+        function Main() {
+            return (
+                <div>main
+                    <h1>hello world 002.html</h1>
+                    <p>hello world 002.html</p>
+                </div>
+            )
+        }
+        function Product() {
+            return (
+                <div>product
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                    <div>best seller 옷</div>
+                </div>
+            )
+        }
+
+        function Footer() {
+            // 한줄이라 소괄호로 묶을 필요가 없다
+            return <div>footer</div>
+        }
+
+        const body = (
+            <div>
+                <Header />
+                <Main />
+                <Product />
+                <Footer />
+            </div>
+        )
+
+        const domContainer = document.querySelector('#root')
+        ReactDOM.render(body, domContainer);
+        console.dir(ReactDOM);
+
+    </script>
+</body>
+
+</html>
