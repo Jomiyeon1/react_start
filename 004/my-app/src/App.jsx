@@ -23,4 +23,26 @@ function App() {
   );
 }
 
-export default App;
+function Homework(){
+  const defaultStyle = {backgroundColor:'black', color:'white'}
+  const redFont = {color:'red'};
+  let varDate = new Date();
+  return(
+  <div style={defaultStyle} ClassName="App">
+    <h1>HomeWork</h1>
+    <h2 style={redFont}> 년 : {varDate.getFullYear()}</h2>
+    <h2> 월/일 : {varDate.getMonth()}/{varDate.getDate()}</h2>
+    <h2> 시간 : {varDate.getHours()}시{varDate.getMinutes()}분{varDate.getSeconds()}초</h2>
+  </div>
+  )
+}
+
+function DefaultPage() {
+  return(
+    <div>
+      <App/>
+      <Homework/>
+    </div>
+  )
+}
+export default DefaultPage;
