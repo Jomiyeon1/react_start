@@ -28,7 +28,7 @@ function Homework(){
   const redFont = {color:'red'};
   let varDate = new Date();
   return(
-  <div style={defaultStyle} ClassName="App">
+  <div style={defaultStyle} className="App">
     <h1>HomeWork</h1>
     <h2 style={redFont}> 년 : {varDate.getFullYear()}</h2>
     <h2> 월/일 : {varDate.getMonth()}/{varDate.getDate()}</h2>
