@@ -26,6 +26,8 @@ function App() {
 
   return (
     <div className="App">
+      {/* map은 element, index, array를 갖는다.
+          productList는 object로 되어있어서 productList.products <- 이렇게 사용해야한다. */}
       {productList.products.map( (item, index) => (
        
        <>
