@@ -1,44 +1,51 @@
-import { useState} from 'react'
-import One from './Components/One'
-import Two from './Components/Two'
-import Three from './Components/Three'
+//about, product, contact 메뉴 3개를 만들고, 메뉴를 눌렀을때 해당 글이 보여지도록 작성
+import { useState } from "react";
+import About from "./Components/About";
+import Product from "./Components/Product";
+import Contact from "./Components/Contact";
 
-function ContentsContainer({listName}){
-    if(listName === 'one'){
-      return <One/>
-    }else if(listName === 'two'){
-      return <Two/> 
-    }else if(listName === 'three'){
-      return <Three/>
-    }
+function ShowDetail ({menulist}){
+  if(menulist === 'about'){
+    return <About/>
+  }else if(menulist === 'product'){
+    return <Product/>
+  }else if(menulist === 'contact'){
+    return <Contact/>
+  }
+                        
 }
 
 function App() {
-  const [listName, setListName] = useState('one')
-  const handleCheckId = (e) => {
-    setListName(e.target.id)
+  const [menulist, setMenuList] = useState("");
+  const handleClickEvent = (e) => {
+    setMenuList(e.target.id);
   }
+
   return (
     <>
-      <nav>
+      <menu>
         <li
-          id='one'
-          style={listName === 'one' ? {color:'red'} : {color:'skyblue'}}
-          onClick={handleCheckId}
-        >One</li>
+        id='about'
+        onClick={handleClickEvent}
+        style = { menulist === 'about' ? {color:'blue'} : {color:'black'}}
+        >
+        about</li>
         <li
-          id='two'
-          style={listName === 'two' ? {color:'red'} : {color:'skyblue'}}
-          onClick={handleCheckId}
-        >Two</li>
+        id='product'
+        onClick={handleClickEvent}
+        style = { menulist === 'product' ? {color:'blue'} : {color:'black'}}
+        >
+        product</li>
         <li
-          id='three'
-          style={listName === 'three' ? {color:'red'} : {color:'skyblue'}}
-          onClick={handleCheckId}
-        >Three</li>
-      </nav>
-      <ContentsContainer listName={listName} />
-    </>
-   )
+        id='contact'
+        onClick={handleClickEvent}
+        style = { menulist === 'contact' ? {color:'blue'} : {color:'black'}}
+        >
+        contact</li>
+      </menu>
+      <ShowDetail menulist ={menulist}/>
+    </>  
+  );
 }
-    export default App;
+
+export default App;
