@@ -25,7 +25,11 @@ function Login(props){
       alert("패스워드를 입력하지않았습니다.");
     }else{
       alert("로그인 되었습니닷!");
+      console.log("props.id" ,props.id)
+      console.log("props.pw", props.pw)
+      console.log("1", user.login)
       user.login = true;
+      console.log("2", user.login)
     }
   };
   return (
