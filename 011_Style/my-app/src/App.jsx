@@ -1,16 +1,27 @@
-import style from './app.module.css'
-import Test from './Components/Test';
+import React from "react";
+import styled from "styled-components";
+
+const ContentOne = styled.div`
+    margin: 40px;
+`;
+
+const ContentTwo = styled.div`
+    color:red;
+`;
+
+//ContentTwo의 속성을 가져와서 확장해서 사용하고 있는 것.
+const ContentThree = styled(ContentTwo)`
+    border: 1px solid black;
+`
 
 function App() {
-    //마지막에 있는 css만 적용시키기때문에 div tag는 test.css의 color:red;만 적용된 걸 확인할 수 있다.
-    //이를 방지하기 위해선  class명에 고유값을 추가해주어서 겹치지 않도록 해야한다.
     return (
-      <div className="App">
-        <div>App.jsx Test</div>
-        <Test/>
-        <div className={style.div1}> App.jsx div1</div>
-      </div>
+        <div>
+            <ContentOne>hello world</ContentOne>
+            <ContentTwo>hello world</ContentTwo>
+            <ContentThree>hello world</ContentThree>
+        </div>
     );
-  }
-  
-  export default App;
+}
+
+export default App;
