@@ -22,6 +22,6 @@ function App() {
             <ContentThree>hello world</ContentThree>
         </div>
     );
-}
 
+}
 export default App;
