@@ -1,5 +1,5 @@
 .black_navbar{
-    background-color: rgb(3, 2, 53);
+    background-color: rgb(32, 35, 42);
     vertical-align: middle;
     color: aqua;
     height: 50px;
@@ -18,7 +18,7 @@
 }
 
 .nav_search{
-    background-color: rgb(3, 2, 53); 
+    background-color:rgb(32, 35, 42); 
     margin-left: 7rem;
 }
 
