@@ -1,13 +1,12 @@
 import style from './mainDetail.module.css'
 import React, { Fragment } from 'react';
 
-export default function MainDetail({id, title, content, sursummary}) {
+export default function MainDetail({content}) {
   return (
     <>
-      <ul>{title}
-        <li>{content}</li>
-        <li>{sursummary}</li>
-      </ul>
+      <h2>{content.title}</h2>
+        <h3>{content.content}</h3>
+        <h3>{content.summary}</h3>      
     </>
   )
 }
