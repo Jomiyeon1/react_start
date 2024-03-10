@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "styled-components": "^6.1.8",
+    "styled-reset": "^4.5.2"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.34"
+  }
+}

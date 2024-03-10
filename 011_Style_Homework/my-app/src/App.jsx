@@ -1,9 +1,19 @@
-import './app.css';
+import { createGlobalStyle } from "styled-components";
+
+import reset from "styled-reset";
 import Navbar from './Components/Navbar'
 import Contents from './Components/Contents'
 import MainDetail from './Components/MainDetail';
 import { mainDetail } from "./data/mainDetail.js"
 import React, { Fragment } from 'react';
+
+// 전역 스타일
+const GlobalStyle = createGlobalStyle`
+
+ body {
+  background-color: rgb(40, 44, 52);
+}
+`
 
 function DetailContents({item}){
   const result = [];
@@ -20,9 +30,12 @@ function DetailContents({item}){
 function App() {
   return (
     <>
-    <Navbar/>
-    <Contents/>
-     <DetailContents item={mainDetail}/> 
+    <GlobalStyle/>
+      <Navbar/>
+
+      <Contents/>
+
+      <DetailContents item={mainDetail}/> 
     </>
   );
 }
