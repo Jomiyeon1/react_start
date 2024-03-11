@@ -1,6 +1,5 @@
 import { createGlobalStyle } from "styled-components";
 
-import reset from "styled-reset";
 import Navbar from './Components/Navbar'
 import Contents from './Components/Contents'
 import MainDetail from './Components/MainDetail';
