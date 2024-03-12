@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 const ContentsStyle = styled.div`
   text-align: center;
+  margin-bottom: 15rem;
 `
 const InputStyle = styled.input`
   background-color: rgb(97, 218, 251);
