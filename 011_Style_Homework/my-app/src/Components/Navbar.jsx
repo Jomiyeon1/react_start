@@ -36,26 +36,27 @@ const SubText = styled.h4`
     /* margin-left: 5rem; */
     font-size: .8rem;
 `
-const SearchStyle = styled.input`
+const SearchTextStyle = styled.input`
     background-color:rgb(32, 35, 42); 
     /* margin-left: 7rem; */
 `
-
+const SearchImgStyle = styled.img`
+  margin-left: 5rem;
+`
 const TranslateStyle = styled.img`
   margin-left: 5rem;
 `
-
 export default function navbar() {
   return (
     <>
       <NavStyle>
-        <LogoStyle img src={logo}/>
+        <LogoStyle src={logo}/>
         React
         <MenuStyle> 문서 자습서 블로그 커뮤니티 </MenuStyle>
-        <img src={search}/>
-        <SearchStyle type='text' placeholder='검색'/>
+        <SearchImgStyle src={search}/>
+        <SearchTextStyle type='text' placeholder='검색'/>
         <SubText>v17.0.2</SubText>
-        <TranslateStyle img src={translate}/> <SubText>Languasges</SubText>
+        <TranslateStyle src={translate}/> <SubText>Languasges</SubText>
       </NavStyle>
     </>
   )

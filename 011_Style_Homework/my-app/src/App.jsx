@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import { createGlobalStyle, ThemeProvider } from "styled-components";
 
 import Navbar from './Components/Navbar'
 import Contents from './Components/Contents'
@@ -29,12 +29,14 @@ function DetailContents({item}){
 function App() {
   return (
     <>
-    <GlobalStyle/>
-      <Navbar/>
+   <ThemeProvider theme={{}}>
+      <GlobalStyle/>
+        <Navbar/>
 
-      <Contents/>
+        <Contents/>
 
-      <DetailContents item={mainDetail}/> 
+        <DetailContents item={mainDetail}/> 
+      </ThemeProvider>
     </>
   );
 }
