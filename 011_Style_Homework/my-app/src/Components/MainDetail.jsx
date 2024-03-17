@@ -2,12 +2,13 @@ import styled from 'styled-components';
 import React, { Fragment } from 'react';
 
 // Main Style
-const BackColor = styled.body`
+const BackColor = styled.div`
     background-color: white;
     display: block;
     width: 32%;
     height: 380px;
     float: right; 
+    margin-right: .5rem;
 `
 
 export default function MainDetail({content}) {

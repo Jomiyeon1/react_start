@@ -9,9 +9,9 @@ import React, { Fragment } from 'react';
 // 전역 스타일
 const GlobalStyle = createGlobalStyle`
 
- body {
+  body {
   background-color: rgb(40, 44, 52);
-}
+} 
 `
 
 function DetailContents({item}){
@@ -29,14 +29,10 @@ function DetailContents({item}){
 function App() {
   return (
     <>
-   <ThemeProvider theme={{}}>
       <GlobalStyle/>
-        <Navbar/>
-
-        <Contents/>
-
-        <DetailContents item={mainDetail}/> 
-      </ThemeProvider>
+      <Navbar/>
+      <Contents/>
+      <DetailContents item={mainDetail}/> 
     </>
   );
 }
