@@ -1,27 +1,26 @@
 import React from "react";
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 
-const ContentOne = styled.div`
-    margin: 40px;
+// 2개의 style을 합친 새로운 style을 적용 
+const One = css`
+    color: red;
 `;
 
-const ContentTwo = styled.div`
-    color:red;
+const Two = css`
+    border : 1px solid black;
 `;
 
-//ContentTwo의 속성을 가져와서 확장해서 사용하고 있는 것.
-const ContentThree = styled(ContentTwo)`
-    border: 1px solid black;
-`
+const Three = styled.div`
+    ${One}
+    ${Two}
+`;
 
-function App() {
-    return (
-        <div>
-            <ContentOne>hello world</ContentOne>
-            <ContentTwo>hello world</ContentTwo>
-            <ContentThree>hello world</ContentThree>
-        </div>
-    );
+const App = () => {
+	return (
+        <Three>
+            Lorem ipsum dolor
+        </Three>
+	);
+};
 
-}
 export default App;
