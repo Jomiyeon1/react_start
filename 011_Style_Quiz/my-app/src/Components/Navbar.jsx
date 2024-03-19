@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import React, { Fragment } from 'react';
 
-import logo from '../../src/img/logo.svg';
-import search from '../../src/img/search.svg';
-import translate from '../../src/img/translate.svg';
+import logo from '../img/logo.svg';
+import search from '../img/search.svg';
+import translate from '../img/translate.svg';
 
 // main Style
 const NavStyle = styled.div`

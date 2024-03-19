@@ -1,8 +1,8 @@
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 
-import Navbar from './Components/Navbar'
-import Contents from './Components/Contents'
-import MainDetail from './Components/MainDetail';
+import Navbar from './Components/Navbar.jsx'
+import Contents from './Components/Contents.jsx'
+import MainDetail from './Components/MainDetail.jsx';
 import { mainDetail } from "./data/mainDetail.js"
 import React, { Fragment } from 'react';
 
