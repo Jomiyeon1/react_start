@@ -16,6 +16,17 @@ const App = () => {
     console.log(pwInput);
     setEmailValue(emailInput.current.value);
     setPwValue(pwInput.current.value);
+
+    if (emailInput.current.value === "") {
+      alert("이메일을 입력해주세요");
+      emailInput.current.focus();
+      return; // if, else 문에 들어오게 되면 setState 실행없이 바로 return
+    } else if (pwInput.current.value === "") {
+      alert("비밀번호를 입력해주세요");
+      pwInput.current.focus();
+      return;
+    }
+    
   };
 
   return (
