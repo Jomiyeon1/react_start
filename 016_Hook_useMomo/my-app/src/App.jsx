@@ -16,12 +16,12 @@ function App() {
 
   function handleInputName(e){
     setName(e.target.value);
-    console.log('렌더링 - 1');
+    console.log('렌더링(handleInputName) - 1');
   }
 
   function handleInputId(e){
     setId(e.target.value);
-    console.log('렌더링 - 2');
+    console.log('렌더링(handleInputId) - 2');
   }
 
   function handleSubmit(e){
@@ -31,7 +31,7 @@ function App() {
     inputId.current.value = '';
     inputName.current.focus();
     setUserInfo(newInfo);
-    console.log('렌더링 - 3');
+    console.log('렌더링(handleSubmit) - 3');
   }
 
   function getNum(user){
