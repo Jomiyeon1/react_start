@@ -1,6 +1,8 @@
 import { useState, useMemo, useRef } from 'react'
 
-
+// 최초 렌더링 → 이전 렌더링부분에 가상 돔 저장 
+// → 상태 업데이트 → 상태 업데이트로 인한 가상 돔 렌더링 
+// → 업데이트로 인해 렌더링된 가상 돔과 이전에 만들어진 가상 돔을 비교 → 바뀐 부분 브라우저에 렌더링
 function App() {
   const inputName = useRef(null);
   const inputId = useRef(null);
