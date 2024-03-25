@@ -1,8 +1,6 @@
 import React, { createContext, useContext } from "react";
-import HelloLicatTwo from './HelloLicatTwo';
-// 파일이 분리되어 있을 경우 context를 사용한 file을 import해서 사용하면 된다.
 
-const UserInfo = createContext({ name: "Miyeon2", id: "miyeonIsFree2" });
+const UserInfo = createContext({ name: "Miyeon", id: "miyeonIsFree" });
 
 const App = () => {
   return (
@@ -25,5 +23,15 @@ const HelloLicat = () => {
   );
 };
 
+const HelloLicatTwo = () => {
+  const {name, id} = useContext(UserInfo);
+  return (
+        <>
+          <h2>Two : {id}</h2>
+          <strong>Two : {name}</strong>
+        </>
+
+  );
+};
 
 export default App;
