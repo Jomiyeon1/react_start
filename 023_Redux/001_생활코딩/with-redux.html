@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!-- · React는 사용자 인터페이스를 위한 JS 라이브러리.(UI를 Component로 만들기 위한 라이브러리)
+     · Redux는 데이터를 엄격하게, 통합해서 관리함으로 예측 가능하게 데이터를 관리하기 위함. 
+        - useContext와의 차이점 
+         1. useContext는 상태를 관리하지 않는다.(상태관리는 useState가 한다.)
+         2. Context가 가지고 있는 state가 하나만 변경되어도, Context의 값을 가진 모든 컴포넌트가 렌더링된다. Redux는 이런 문제를 막아준다.                        
+        - Redux는 React와는 다른 라이브러리로,  Vue에서도 사용할 수 있고 순수한 JS에서도 사용할 수 있다. 
+          엄격한 state 관리와 단일화된 저장소, subscibe을 통한 업데이트 기능을 제공합. 규모있는 프로젝트의 상태 관리에 적합.
+     · 공통점 : 복잡한 프로젝트에서 복잡도를 낮춰줌 
+     · 프로젝트에 따라 어떤 것을 사용할지 선택해야하며, Redux는 오히려 복잡성을 증가시킬 수 있다. -->
+<html>
+    <head>
+        <!-- cdn -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.0.1/redux.js"></script>
+    </head>
+    
+    <body>
+        <style>
+            .container {
+                border: 5px solid black;
+                padding: 10px;
+            }
+            </style>
+    <div id="red"></div>
+    <div id="blue"></div>
+    <div id="green"></div>
+    <script>
+        // state는 현재 상태, action은 주문 받은 것! 
+        // reducer만 상태를 변경할 수 있다.(프로그래머가 조작할 수 없음. => 데이터를 보다 안전하게 관리하기 위함.)
+        // action → dispatch -> reducer
+        function reducer(state, action) {
+            console.log(state, action);
+            if (state === undefined) {
+                return { color: 'yellow' }
+            }
+            var newState;
+            if (action.type === 'CHANGE_COLOR') {
+                //복제해야 합니다. 그냥 {color:'red'}이런 식으로 리턴해줘도 되긴 하는데 리덕스의 고급기능을 쓰지 못합니다.
+                // Object.assign({}, 빈객체에 복제할 값1, 빈객체에 복제할 값2...);
+                console.log(state)
+               // 하단의 주석된 코드는 예전 문법( Object.assign )
+               // newState = Object.assign({}, state, { color: action.color });
+               newState = { ...state, color: action.color };
+            }
+            return newState;
+        }
+        // Redux는 cdn으로 생깁니다.
+        // 한 개의 프로젝트당 하나의 store만 가질 수 있다.
+        // reducer는 여러개 만들 수 있다. => 통합해서 관리 가능
+        var store = Redux.createStore(
+            reducer,
+            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // redux dev tools를 사용하기 위한 코드
+        );
+
+        // without-redux.html 와 달리 background-color를 state로 control하고, 값을 store에서 꺼내쓴다.
+        function red() {
+            var state = store.getState();
+            //type은 반드시 있어야 합니다.
+            // 바뀔 때마다 console에 store.getState()를 실행해보세요.
+            document.querySelector('#red').innerHTML = `
+                <div class="container" id="component_red" style="background-color:${state.color}">
+                        <h1>red</h1>
+                        <input type="button" value="fire" onclick="
+                            store.dispatch({type:'CHANGE_COLOR', color:'red'});
+                        ">
+                </div>
+            `;
+        }
+        // 값이 바뀔 때마다 red 함수를 호출
+        store.subscribe(red);
+        red();
+
+        function blue() {
+            var state = store.getState();
+            document.querySelector('#blue').innerHTML = `
+                <div class="container" id="component_blue" style="background-color:${state.color}">
+                    <h1>blue</h1>
+                    <input type="button" value="fire" onclick="
+                        store.dispatch({type:'CHANGE_COLOR', color:'blue'});
+                    ">
+                </div>
+            `;
+        }
+        store.subscribe(blue);
+        blue();
+
+        function green() {
+            var state = store.getState();
+            document.querySelector('#green').innerHTML = `
+                <div class="container" id="component_green" style="background-color:${state.color}">
+                    <h1>green</h1>
+                    <input type="button" value="fire" onclick="
+                        store.dispatch({type:'CHANGE_COLOR', color:'green'});
+                    ">
+                </div>
+            `;
+        }
+        store.subscribe(green);
+        green();
+
+    </script>
+</body>
+
+</html>
