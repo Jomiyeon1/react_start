@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "redux": "^5.0.1",
     "styled-components": "^6.1.8",
     "styled-reset": "^4.5.2"
   },
