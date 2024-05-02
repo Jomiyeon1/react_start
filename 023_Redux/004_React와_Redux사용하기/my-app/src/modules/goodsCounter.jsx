@@ -9,7 +9,7 @@ export const substractNumber = () => {
 
 // 초기값
 const initialState = {
-    stock : 100, // 재고
+    stock : 5, // 재고
     goods : 1    // user의 파우치 구매 개수
 }
 
@@ -21,14 +21,14 @@ const goodsReducer = (state = initialState, action) => {
         case 'ADD':
             return {
                 ...state,
-                stock : state.stock - 1,
-                goods : state.goods + 1,
+                stock : state.stock == 0 ? state.stock : state.stock - 1,
+                goods : state.stock == 0 ? state.goods : state.goods + 1,
             }
         case 'SUBSTRACT':
             return {
                 ...state,
-                stock : state.stock + 1,
-                goods : state.goods - 1,
+                stock : state.stock == state.goods || state.goods == 0 ? state.stock : state.stock + 1,
+                goods : state.goods == 0  ? state.goods : state.goods - 1,
             }
         default:
             return state
