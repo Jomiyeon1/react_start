@@ -1,13 +1,19 @@
 import { useSelector, useDispatch } from 'react-redux'
-// import { , } from '../modules/stockCounter'
+ import { sale, soldout } from '../modules/stockCounter'
 
 function StockCounter(){
+    const{message} = useSelector(state => ({
+        message: state.stockReducer.message
+    }))
+    console.log("message => ", message);
+    const dispatch = useDispatch();
+
+    const onSale = () => dispatch(sale());
+    const onSoldout = () => dispatch(soldout());
 
     return (
         <div>
-            <p>판매중!!</p>
-            <p>완판!!</p>
-            {/* hint : <p>{message}</p> */}
+            <p>{message}</p>
         </div>
     )
 }
