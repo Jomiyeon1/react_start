@@ -1,0 +1,25 @@
+.navbar{
+  background-color: #C980F9;
+  height: 6rem;
+  padding-top: 1rem;
+  font-size: 4rem;
+}
+
+.product {
+  display: flex;
+  justify-content: center;
+  margin-top: 160px;
+  padding-bottom: 156px;
+}
+
+.product .product-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 60px;
+  width: 1260px;
+  margin-right: 60px;
+}
+
+.product .cart-link {
+  background: var(--main-color) url(../../assets/icon-shopping-cart-white.svg) no-repeat center / 40px 40px;
+}
