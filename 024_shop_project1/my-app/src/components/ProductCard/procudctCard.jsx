@@ -1,9 +1,16 @@
-import React from 'react'
+import { useRef } from 'react'
 import ProductImage from './ProductImage/ProductImage'
 import ProductName from'./ProductName/ProductName'
 import ProductPrice from './ProductPrice/ProductPrice'
 import './procductCard.css'
-export default function procudctCard({ productName, price, thumbnailImg }) {
+export default function ProcudctCard({ productName, price, thumbnailImg }) {
+  const likeBtn = useRef();
+
+  function handleLikeClick (e){
+    // console.log(e);
+    // console.log(e.currentTarget.classList);
+    e.currentTarget.classList.toggle('on');
+  }
   return (
     <li className='product-item'>
         <div className='product-img'>
@@ -11,7 +18,7 @@ export default function procudctCard({ productName, price, thumbnailImg }) {
         </div>
         <div>
           <ProductName productName={productName}/>
-          <button className='like-btn'></button>
+          <button ref={likeBtn} onClick={handleLikeClick} className='like-btn'></button>
         </div>
         <div className='product-price'>
           <ProductPrice productPrice= {price}/>

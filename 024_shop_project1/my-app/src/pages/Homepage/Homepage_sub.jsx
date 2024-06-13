@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import {product} from '../../data/product'
 import './homepage.css'
 import ProductCard from '../../components/ProductCard/procudctCard'
@@ -6,46 +6,46 @@ import ProductCard from '../../components/ProductCard/procudctCard'
 
 export default function Homepage() {
 
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const[item, setItem] = useState([]);
+const [loadData, setLoadData] = useState(null);
 
   useEffect(() => {
-    const getProduct = async () => {
-      try{
-        const res = await fetch('https://test.api.weniv.co.kr/mall');
-        const result = await res.json();
-        setItem(result);
-        setIsLoaded(true);
-      }catch (error){
-        setError(error);
-      }
-    }
-    getProduct();
-  }, [])
+    console.log('로딩중');
+  },[])
 
-  if(error){
-    return <div>ERROR!! {error.message}</div>
-  }else if(!isLoaded){
-      return <div> 로딩 중 </div>
-  }else{
+  useEffect(() => {
+    if(loadData == null){
+      return;
+    }else{
+      console.log('로딩완료 ~.~');
+      console.log(loadData);
+    }
+  },[loadData])
+
+  useContext(product).then(d => {
+    console.log('데이터 세팅');
+    console.log(d);
+    setLoadData(d);
+  })
+
+
     return (
       <>
           <div className='navbar'>reactShop</div>
           <main className='product'>
               <ul className="product-list">
-                  {product.map(item => 
+                {loadData !== null ? 
+                  loadData.map(item => 
                       <ProductCard
                           key={item.id}
                           productName={item.productName}
                           price={item.price}
                           thumbnailImg={item.thumbnailImg}
                       />
-                      )}
+                      ) : <h2> 로딩 중 입니다.</h2>
+                    }
               </ul>
           </main>
       </>
     )
-  }
  
 }
