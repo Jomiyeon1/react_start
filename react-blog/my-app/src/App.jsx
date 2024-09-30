@@ -10,7 +10,7 @@ function App() {
   // data 확인용
   //console.log(data)
 
-  const [userId, setUserId] = useState(0)
+  const [userId, setUserId] = useState(1)
   const [isLogin, setIsLogin] = useState(true);
   return (
     <UserContext.Provider value={{userId, isLogin}}>
