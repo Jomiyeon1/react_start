@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
+import Header from "../../components/header/Header"
+import Banner from "../../components/banner/Banner"
+import Main from "../../components/main/Main"
+import Footer from "../../components/footer/Footer"
 import "./home.css"
 
 export default function Home() {
@@ -12,11 +16,17 @@ export default function Home() {
       setPosts(json.data)
     })
   },[])
-  console.log(posts)
+  // console.log(posts)
   return (
-    <div> 
+    <> 
+      <Header/>
+      <Banner/>
+      <Main
+        posts={posts}
+      />
+      <Footer/>
       Home
-      {posts.map(post => <h2 key={post.id}>{post.title}</h2>)} 
-      </div>
+      {/* {posts.map(post => <h2 key={post.id}>{post.title}</h2>)}  */}
+    </>
   )
 }
