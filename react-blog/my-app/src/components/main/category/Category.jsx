@@ -3,11 +3,7 @@ import React from 'react'
 export default function Cartegory() {
   return (
     <div>
-      <dl className="category">
-        <dt className="a11y-hidden">Category</dt>
-        <dd>Life</dd>
-        <dd>Style</dd>
-      </dl>
+      Category
     </div>
   )
 }
