@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import imgProfile from "../../../assets/profile.jpg"
 import imgIconModifyWhite from "../../../assets/icon-modify-white.svg"
 import imgIconLogout from "../../../assets/icon-logout.svg"
+import "./login.css"
 
 export default function Login() {
   return (

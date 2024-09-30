@@ -1,4 +1,4 @@
-import React from 'react'
+import "./author.css"
 
 export default function Author({userName, profileImg, created}) {
   return (
