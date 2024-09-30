@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home"
 import BlogDetail from "./pages/blogDetail/BlogDetail"
 import UserContext from "./context/UserContext";
-import data from"./database/data.json"
+//import data from"./database/data.json"
 
 function App() {
   // data 확인용
