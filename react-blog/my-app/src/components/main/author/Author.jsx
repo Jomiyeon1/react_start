@@ -11,4 +11,4 @@ export default function Author({userName, profileImg, created}) {
       </dl>
     </div>  
   )
-}
+} 
